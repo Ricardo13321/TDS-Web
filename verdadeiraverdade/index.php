@@ -47,8 +47,13 @@
 
         function mudarbg() {
             let numeroAleatorio = Math.floor(Math.random() * (max - min + 1))
+            let numeroAleatorio2 = Math.floor(Math.random() * (max - min + 1))
             document.body.style.background = randomcolors[numeroAleatorio];
-            //document.getElementById("caaaaaaaaaard").classList = "card-body text-bg-warning".randomcolorsbootstrap[numeroAleatorio];
+            if(numeroAleatorio != numeroAleatorio2) {
+                document.body.style.color = randomcolors[numeroAleatorio2];
+            }
+            
+            //document.getElementById("caaaaaaaaaard").classList = "card-body text-bg-".randomcolorsbootstrap[numeroAleatorio];
             delay();
         }
         
