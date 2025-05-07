@@ -5,6 +5,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <title>É bissexto??</title>
+        <style>
+            body {
+                background-image: url("http://gunlakesewer.org/wp-content/uploads/2016/04/Animated-gif-spinning-question-mark-picture-moving.gif");
+            }
+
+            
+
+        </style>
     </head>
     <body>
         <center><h2>Calculatrom</h2></center>
@@ -19,13 +27,16 @@
                         </svg>&nbsp;&nbsp;<font style="font-size: 30px;"><b>Calculatrom calcula se o ano é bissexto</b></font>
                     </div>
                     <div class="card-body">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Standing-spinning-cat-ubrw30x0hyi4v9oh.gif?20250108211459" class="card-img-top" height="400">
+                        <!--
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Standing-spinning-cat-ubrw30x0hyi4v9oh.gif?20250108211459" class="card-img-top" height="400">
+                        -->
+                        <img src="https://images7.memedroid.com/images/UPLOADED896/65454f4d1c061.webp" class="card-img-top" height="400">
                         <?php
                             $ano = $_POST['ano'];
                             if (($ano% 4 == 0 && $ano% 100 != 0) || ($ano% 400 == 0)) {
                                 echo "<br/> O ano <b>".$ano." é bissexto</b><br/><h7";
                             } else {
-                                echo "<br/> O ano <b>".$ano." é não bissexto</b><br/><h7";
+                                echo "<br/> O ano <b>".$ano." não é bissexto</b><br/><h7";
                             }
 
                             echo "<h7/><br/><a href='index.php' class='btn btn-outline-success' tabindex='-1' role='button'>VOLTAR</a>";

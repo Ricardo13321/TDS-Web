@@ -5,6 +5,25 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <title>É bissexto??</title>
+        <style>
+            @keyframes girando {
+                from {
+                    transform: rotate(0deg);
+                    transform: rotateX('0deg');
+                }
+                to {
+                    transform: rotate(-360deg);
+                    transform: rotateX('360deg');
+                }
+            }
+            body {
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI2047YOQyZ-EP_x9K60Z8Iwi50BwJYU3KOw&s");
+                animation-name: girando;
+                animation-duration: 10s;
+                animation-iteration-count: 100000000000000;
+                
+            }
+        </style>
     </head>
     <body>
         <center><h2>Calculatrom</h2></center>
@@ -20,7 +39,10 @@
                     </div>
                     <div class="card-body">
                         <form action="resultado.php" method="post">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Standing-spinning-cat-ubrw30x0hyi4v9oh.gif?20250108211459" class="card-img-top" height="400">
+                            <!--
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Standing-spinning-cat-ubrw30x0hyi4v9oh.gif?20250108211459" class="card-img-top" height="400">
+                            -->
+                            <img src="https://images7.memedroid.com/images/UPLOADED896/65454f4d1c061.webp" class="card-img-top" height="500">
                             <label class="form-label">Digite um ano</label>
                             <input class="form-control" type="number" name="ano" required placeholder="1998" step="0"/><br/>
                             <input type="submit" class="btn btn-outline-success" value="Enviar"/>
