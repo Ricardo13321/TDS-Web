@@ -20,45 +20,12 @@
                     </div>
                     <div class="card-body">
                         <?php
-                            $Letra = strtoupper($_POST['letra']);
-                            
-                            switch ($Letra) {
-                                case "A":
-                                case "E":
-                                case "I":
-                                case "O":
-                                case "U":
-                                    echo "$Letra é uma vogal.";
-                                    break;
-                                case "B":
-                                case "C":
-                                case "D":
-                                case "F":
-                                case "G":
-                                case "H":
-                                case "J":
-                                case "K":
-                                case "L":
-                                case "M":
-                                case "N":
-                                case "P":
-                                case "Q":
-                                case "R":
-                                case "S":
-                                case "T":
-                                case "V":
-                                case "W":
-                                case "X":
-                                case "Y":                                    case "Z":
-                                    echo "$Letra é uma consoante.";
-                                    break;
-                                default:
-                                    echo "$Letra não é uma letra.";
-                                    break; 
-                            }
-
+                            $VT = $_POST['VT'];
+                            $Desconto = ($VT >= 50 && $VT <= 100) ? 0.05 : ($VT > 100? 0.1:0);
+                            $VD = $VT-($VT*$Desconto);
+                            echo"O valor total da sua compra é  R$".number_format($VT,2).", e com desconto de ".($Desconto*100)."% o seu valor total será R$".number_format($VD, 2);
                         ?>
-                        <br><h7/><br/><a href='index.php' class='btn btn-outline-success' tabindex='-1' role='button' autofocus>VOLTAR</a>
+                        <br><h7/><br/><a href='index.php' class='btn btn-danger' tabindex='-1' role='button' autofocus>VOLTAR</a>
                     </div>
                 </div>
             </div>

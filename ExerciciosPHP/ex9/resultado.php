@@ -20,45 +20,32 @@
                     </div>
                     <div class="card-body">
                         <?php
-                            $Letra = strtoupper($_POST['letra']);
-                            
-                            switch ($Letra) {
-                                case "A":
-                                case "E":
-                                case "I":
-                                case "O":
-                                case "U":
-                                    echo "$Letra é uma vogal.";
-                                    break;
-                                case "B":
-                                case "C":
-                                case "D":
-                                case "F":
-                                case "G":
-                                case "H":
-                                case "J":
-                                case "K":
-                                case "L":
-                                case "M":
-                                case "N":
-                                case "P":
-                                case "Q":
-                                case "R":
-                                case "S":
-                                case "T":
-                                case "V":
-                                case "W":
-                                case "X":
-                                case "Y":                                    case "Z":
-                                    echo "$Letra é uma consoante.";
-                                    break;
-                                default:
-                                    echo "$Letra não é uma letra.";
-                                    break; 
+                            $numero1 = $_POST['number1'];
+                            $numero2 = $_POST['number2'];
+                            $op = $_POST['op'];
+                            $resultado = null;
+                            switch ($op) {
+                               case '+':
+                                   $resultado = $numero1 + $numero2;
+                                   break;
+                               case '-':
+                                   $resultado = $numero1 - $numero2;
+                                   break;
+                               case '*':
+                                   $resultado = $numero1 * $numero2;
+                                   break;
+                               case '/':
+                                   $resultado = $numero1 / $numero2;
+                                   break;
+                               default:
+                                   echo"<span style = 'color: red'>Você digitou '$op' não é um operador aceito pelo programa, por favor digite + (para soma), - (para subtração), * (para multiplicação) e / (para divisão)</span>";
+                                   break;
                             }
-
+                            if ($resultado != null) {
+                                echo "O resultado da operação $numero1 $op $numero2 é $resultado";
+                            }
                         ?>
-                        <br><h7/><br/><a href='index.php' class='btn btn-outline-success' tabindex='-1' role='button' autofocus>VOLTAR</a>
+                        <br><h7/><br/><a href='index.php' class='btn btn-danger' tabindex='-1' role='button' autofocus>VOLTAR</a>
                     </div>
                 </div>
             </div>

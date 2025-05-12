@@ -20,45 +20,10 @@
                     </div>
                     <div class="card-body">
                         <?php
-                            $Letra = strtoupper($_POST['letra']);
-                            
-                            switch ($Letra) {
-                                case "A":
-                                case "E":
-                                case "I":
-                                case "O":
-                                case "U":
-                                    echo "$Letra é uma vogal.";
-                                    break;
-                                case "B":
-                                case "C":
-                                case "D":
-                                case "F":
-                                case "G":
-                                case "H":
-                                case "J":
-                                case "K":
-                                case "L":
-                                case "M":
-                                case "N":
-                                case "P":
-                                case "Q":
-                                case "R":
-                                case "S":
-                                case "T":
-                                case "V":
-                                case "W":
-                                case "X":
-                                case "Y":                                    case "Z":
-                                    echo "$Letra é uma consoante.";
-                                    break;
-                                default:
-                                    echo "$Letra não é uma letra.";
-                                    break; 
-                            }
-
+                            $ano = $_POST['ano'];
+                            echo "O $ano ".($ano%4 == 0 && $ano%100 == 0  && $ano %400 == 0 || $ano%4 == 0 && $ano%100 != 0?'é':'não é')." bissexto";
                         ?>
-                        <br><h7/><br/><a href='index.php' class='btn btn-outline-success' tabindex='-1' role='button' autofocus>VOLTAR</a>
+                        <br><h7/><br/><a href='index.php' class='btn btn-danger' tabindex='-1' role='button' autofocus>VOLTAR</a>
                     </div>
                 </div>
             </div>

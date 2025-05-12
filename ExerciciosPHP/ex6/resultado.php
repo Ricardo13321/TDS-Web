@@ -20,45 +20,14 @@
                     </div>
                     <div class="card-body">
                         <?php
-                            $Letra = strtoupper($_POST['letra']);
-                            
-                            switch ($Letra) {
-                                case "A":
-                                case "E":
-                                case "I":
-                                case "O":
-                                case "U":
-                                    echo "$Letra é uma vogal.";
-                                    break;
-                                case "B":
-                                case "C":
-                                case "D":
-                                case "F":
-                                case "G":
-                                case "H":
-                                case "J":
-                                case "K":
-                                case "L":
-                                case "M":
-                                case "N":
-                                case "P":
-                                case "Q":
-                                case "R":
-                                case "S":
-                                case "T":
-                                case "V":
-                                case "W":
-                                case "X":
-                                case "Y":                                    case "Z":
-                                    echo "$Letra é uma consoante.";
-                                    break;
-                                default:
-                                    echo "$Letra não é uma letra.";
-                                    break; 
-                            }
-
+                            $Av1 = $_POST['Av1'];
+                            $Av2 = $_POST['Av2'];
+                            $Av3 = $_POST['Av3'];
+                            $Media = ($Av1+$Av2+$Av3)/3;
+                            $Media = round($Media,1);
+                            echo "A média do aluno é $Media portanto ele está ".($Media >= 7?"<bold style='color: green'>Aprovado</bold>":"<bold style='color: red'>Reprovado</bold>");
                         ?>
-                        <br><h7/><br/><a href='index.php' class='btn btn-outline-success' tabindex='-1' role='button' autofocus>VOLTAR</a>
+                        <br><h7/><br/><a href='index.php' class='btn btn-danger' tabindex='-1' role='button' autofocus>VOLTAR</a>
                     </div>
                 </div>
             </div>
