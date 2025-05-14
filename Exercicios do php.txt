@@ -1,0 +1,148 @@
+Aluno: Ricardo Gabriel Gomes
+
+_______________________________________________________________________
+Exercício 1 - Soma dos elementos
+
+<?php 
+    $array = [2, 4, 6, 8, 10];
+    $soma = array_sum($array);
+    echo "A soma é $soma";
+?>
+
+_______________________________________________________________________
+Exercício 2 - Média dos valores
+
+<?php 
+    $array = [5, 10, 15, 20];
+    $soma = array_sum($array);
+    $media = 0;
+    $media = $soma/count($array);
+    echo "A soma é $soma e a sua média é $media";
+?>
+_______________________________________________________________________
+Exercício 3 - Inverter um array
+
+<?php 
+    $array = [1, 2, 3, 4, 5];
+    krsort($array);
+    print_r($array);
+?>
+_______________________________________________________________________
+Exercício 4 - Verificar valor no array
+
+<?php 
+    $array = [3, 6, 9, 12, 7];
+    
+    if(array_search(7, $array) == null) {
+        echo"O número 7 não contém no nosso array";
+    } else {
+        echo "O número 7 contém no nosso array";
+    }
+?>
+
+_______________________________________________________________________
+Exercício 5 - Array associativo (idades)
+
+<?php 
+    $array = array (
+        "Nome" => array ("Marcos", "Lucas", "Maria", "Juan", "Clotilde", "Leonardo"),
+        "Idade" => array (20, 32, 15, 30, 14, 25)
+    );
+    
+    for ($i = 0; $i < count($array["Nome"]); $i++) {
+        if ($array["Idade"][$i] > 18) {
+            echo "Nome: ".$array["Nome"][$i]."<br>";
+        }
+    }
+?>
+
+_______________________________________________________________________
+Exercício 6 - Maior e menor valor
+<?php 
+    $array = [4, 8, 2, 9, 1];
+    $min = min($array);
+    $max = max($array);
+    echo"O valor mais alto é $max e o valor mais baixo é $min";
+?>
+_______________________________________________________________________
+Exercício 7 - Array de strings (maiúsculas)
+
+<?php 
+    $array = ["banana", "maçã", "laranja"];
+    
+    foreach ($array as $key => $value) {
+        $array[$key] = strtoupper($value);
+        echo$array[$key]."<br>";
+    }
+?>
+_______________________________________________________________________
+Exercício 8 - Remover duplicatas
+
+<?php 
+    $array = [1, 2, 2, 3, 4, 4, 5];
+    $array = array_unique($array);
+    print_r($array);
+?>
+_______________________________________________________________________
+Exercício 9 - Contar elementos
+
+<?php 
+    $array = [10, 20, 30, 40, 50];
+    $quantidade = count($array);
+    echo"O array possui $quantidade elementos";
+?>
+_______________________________________________________________________
+Exercício 10 - Array multidimensional
+
+<?php 
+$Alunos = array (   "Nomes" => array("Cleber", "Juan", "Jonisvalda", "Judite"),"Nota" => array(5, 8, 10, 3));
+foreach ($Alunos['Nomes'] as $key => $value) {
+    if($Alunos['Nota'][$key] > 6) {
+        echo 'Aluno: '.$Alunos['Nomes'][$key].' Nota: '.$Alunos['Nota'][$key].'<br>';
+    }
+}
+?>
+
+_______________________________________________________________________
+Exercício 11 - Índices personalizados
+
+<?php 
+$paises = array ("Pais" =>  array ('Hungria', 'Eslováquia', 'Cazaquistão'), 'Capital'=>  array ('Budapest', 'Bratislava', 'Nursultan'));
+print_r ($paises['Capital']);
+?>
+_______________________________________________________________________
+Exercício 12 - Mesclar arrays
+
+<?php 
+$array1 = [1, 2, 3];
+$array2 = [4, 5, 6];
+$array3 = array_merge($array1, $array2);
+print_r($array3);
+?>
+_______________________________________________________________________
+Exercício 13 - Ordenar array
+
+<?php 
+$array = [9, 3, 6, 1];
+sort($array);
+print_r($array);
+?>
+
+_______________________________________________________________________
+Exercício 14 - Filtrar valores
+<?php 
+$array = [1, 2, 3, 4, 5, 6];
+print_r(array_filter($array,"even"));
+function even($var)
+{
+    // returns whether the input integer is even
+    return !($var & 1);
+}
+?>
+_______________________________________________________________________
+Exercício 15 - Transformar em string
+<?php 
+$array = ["PHP", "é", "legal"] ;
+$array = implode(" ", $array) ;
+echo $array;
+?>
