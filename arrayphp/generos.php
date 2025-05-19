@@ -25,9 +25,9 @@ $count = array_count_values($gen);
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['Masculino', <?php echo $count["Masculino"] ?>],
-          ['Feminino', 1],
-          ['Outro', 1],
+          ['Masculino', <?php echo isset($count["Masculino"])?$count["Masculino"]:0 ?>],
+          ['Feminino', <?php echo isset($count["Feminino"])?$count["Feminino"]:0 ?>],
+          ['Outro', <?php echo isset($count["Outro"])?$count["Outro"]:0 ?>],
         ]);
 
         // Set chart options
