@@ -135,7 +135,7 @@
                             <td><?= htmlspecialchars($_SESSION['nomes'][$i]); ?></td>
                             <td><?= htmlspecialchars($_SESSION['emails'][$i]); ?></td>
                             <td><?= htmlspecialchars($_SESSION['generos'][$i]); ?></td>
-                            <td><?= $i ?><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-purple">Editar</button> <a href="excluir.php?pos=<?= $i ?>"><button class="btn btn-danger" type="button">Excluir</button></a></></td><?php } ?>
+                            <td><?= $i ?><button type="button" onclick="atualizardados(<?= $i ?>)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-purple">Editar</button> <a href="excluir.php?pos=<?= $i ?>"><button class="btn btn-danger" type="button">Excluir</button></a></></td><?php } ?>
                         </tr>
                     </table>
                 </div>
@@ -161,7 +161,3 @@
     </div>
 </body>
 </html>
-
-<script language="javascript" type="text/javascript" >
-    
-</script>
