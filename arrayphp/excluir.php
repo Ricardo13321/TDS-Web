@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['usuario'])) {header('Location: index.php');}
     $index = $_GET['pos'];
     $emails = $_SESSION['emails'];
     $id = array_search($_SESSION['usuario'], $emails);

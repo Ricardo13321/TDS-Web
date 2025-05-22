@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['usuario'])) {
+        header('Location: index.php');
+        exit;
+    }
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -13,6 +17,6 @@
         array_push($_SESSION['emails'], $email);
         array_push($_SESSION['generos'], $genero);
         array_push($_SESSION['senhas'], $senha);
-        header("Location: inicial.php");
     }
+    header("Location: inicial.php");
 ?>

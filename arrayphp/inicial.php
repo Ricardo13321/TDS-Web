@@ -1,5 +1,9 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['usuario'])) {
+        header('Location: index.php');
+        exit;
+    }
     if (!isset($_SESSION['nomes'])) {
         $emails = json_decode(file_get_contents('email.json'), true);
         $senhas = json_decode(file_get_contents('senha.json'), true);
@@ -14,7 +18,7 @@
         $nomes = $_SESSION['nomes'];
         $emails = $_SESSION['emails'];
         $id = array_search($_SESSION['usuario'], $emails);
-    }    
+    }
 ?>
 <!-- link para os botões customizados https://uiverse.io/buttons?page=1-->
 <!DOCTYPE html>

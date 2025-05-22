@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(array_key_exists('usuario',$_SESSION)) {
+    header('Location: inicial.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

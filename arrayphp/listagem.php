@@ -1,8 +1,9 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['usuario'])) {header('Location: index.php');}
     $nomes = $_SESSION['nomes'];
     $emails = $_SESSION['emails'];
-    $id = array_search($_SESSION['usuario'], $emails);
+    $id = array_search($_SESSION['usuario'], $emails); 
 ?>
 <!-- link para os botões customizados https://uiverse.io/buttons?page=1-->
 <!DOCTYPE html>
@@ -135,7 +136,7 @@
                             <td><?= htmlspecialchars($_SESSION['nomes'][$i]); ?></td>
                             <td><?= htmlspecialchars($_SESSION['emails'][$i]); ?></td>
                             <td><?= htmlspecialchars($_SESSION['generos'][$i]); ?></td>
-                            <td><?= $i ?><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-purple">Editar</button> <a href="excluir.php?pos=<?= $i ?>"><button class="btn btn-danger" type="button">Excluir</button></a></></td><?php } ?>
+                            <td><button type="button" onclick="atualizarformulario('<?= $i ?>','<?= htmlspecialchars($_SESSION['emails'][$i]); ?>','<?= htmlspecialchars($_SESSION['nomes'][$i]); ?>','<?= htmlspecialchars($_SESSION['generos'][$i]); ?>','<?= htmlspecialchars($_SESSION['senhas'][$i]); ?>');" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-purple">Editar</button> <a href="excluir.php?pos=<?= $i ?>"><button class="btn btn-danger" type="button">Excluir</button></a></></td><?php } ?>
                         </tr>
                     </table>
                 </div>
@@ -151,7 +152,25 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="form" class="modal-body text-start">
-                    
+                     <form id="form_edit" action="cadastro.php" method="post">
+                        <label class="form-label">E-MAIL</label>
+                        <input class="form-control" id="email" type="email" name="email" required autofocus placeholder="Digite o seu e-mail">
+                        <br>
+                        <label class="form-label">NOME</label>
+                        <input class="form-control" type="text" id="nome" name="nome" required  placeholder="Digite o seu nome">
+                        <br>
+                        <label class="form-label">GÊNERO</label>
+                        <select class="form-select" id="floatingSelect" aria-label="Selecione um gênero" name="genero" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                        <br>
+                        <label class="form-label">SENHA</label>
+                        <input class="form-control" id="senha" type="password" name="senha" required  placeholder="**********">
+                        <br>
+                        <input type="submit" class="btn btn-purple" value="CADASTRAR">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">FECHAR</button>
@@ -163,5 +182,18 @@
 </html>
 
 <script language="javascript" type="text/javascript" >
-    
+    const url = "editar.php?id=";
+    const email = document.getElementById("email");
+    const nome = document.getElementById("nome");
+    const genero = document.getElementById("floatingSelect");
+    const form = document.getElementById("form_edit");
+    const senha = document.getElementById("senha");
+
+    function atualizarformulario(id, vemail, vnome, vgenero, vsenha) {
+        email.value = vemail;
+        nome.value = vnome;
+        genero.value = vgenero;
+        form.action = url+id;
+        senha.value = vsenha;
+    }
 </script>

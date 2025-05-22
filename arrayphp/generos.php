@@ -1,4 +1,9 @@
 <?php 
+if(!isset($_SESSION['usuario'])) {
+  header('Location: index.php');
+  exit;
+}
+
 $gen = $_SESSION["generos"];
 $count = array_count_values($gen);
 ?>
